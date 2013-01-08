@@ -21,6 +21,10 @@
 	
 	c = commit -avem ":trollface:"
 	
+	f = fetch
+	
+	fa = fetch --all
+	
 [apply]
 	whitespace = nowarn
 	
