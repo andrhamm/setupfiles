@@ -27,6 +27,12 @@
 [core]
 	# setup textmate for commits
 	editor = mate --wait
+
+[merge]
+	tool = opendiff
+
+[diff]
+	tool = opendiff
 	
 [color]
 	# colors from screencast
