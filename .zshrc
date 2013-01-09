@@ -70,3 +70,5 @@ function precmd() {
     export PROMPT="%{$GREEN%}%~%{$BLACK%} ] "
 	export RPROMPT="%{$RED%}$(parse_git_status)%{$BLACK%}"
 }
+
+[ -s "/Users/andrew/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrew/.scm_breeze/scm_breeze.sh"
