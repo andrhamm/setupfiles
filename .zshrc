@@ -1,3 +1,5 @@
+autoload -U compinit && compinit
+
 . ~/.bash_profile
 # . ~/setupfiles/zsh/rc
 
@@ -71,4 +73,14 @@ function precmd() {
 	export RPROMPT="%{$RED%}$(parse_git_status)%{$BLACK%}"
 }
 
+# Source the git bash completion file
+# if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+# 	source /usr/local/etc/bash_completion.d/git-completion.zsh
+# 	GIT_PS1_SHOWDIRTYSTATE=true
+# fi
+
 [ -s "/Users/andrew/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrew/.scm_breeze/scm_breeze.sh"
+
+
+# Added for Hub - https://github.com/defunkt/hub
+eval "$(hub alias -s)"

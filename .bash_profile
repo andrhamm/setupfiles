@@ -1,8 +1,8 @@
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-export PATH=$PATH:/etc/pear/bin:/etc/pear/share/pear:/etc/pear/bin
-export PATH=$PATH:~/EverTrue/dev/devops/evertools/prebuilt/evertools-1.0-SNAPSHOT/bin
-export PATH=$PATH:/usr/local/scala/bin
-export PATH=$PATH:/usr/local/mysql/bin
+export PATH=/usr/local/share/python:/usr/local/bin:$PATH
+export PATH=/etc/pear/share/pear:/etc/pear/bin:$PATH
+export PATH=~/EverTrue/dev/devops/evertools/prebuilt/evertools-1.0-SNAPSHOT/bin:$PATH
+export PATH=/usr/local/scala/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
 
 
 export ET_SCRIPT_PATH=~/EverTrue/dev/core/script:~/EverTrue/dev/core/include
@@ -13,7 +13,7 @@ export EDITOR="/usr/local/bin/mate -w"
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=~/.ec2
-export PATH=$PATH:$EC2_HOME/bin
+export PATH=$EC2_HOME/bin:$PATH
 export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
 export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
