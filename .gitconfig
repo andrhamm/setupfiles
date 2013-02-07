@@ -26,11 +26,7 @@
 	fa = fetch --all
 	
 [apply]
-	whitespace = nowarn
-	
-[core]
-	# setup textmate for commits
-	editor = mate --wait
+	whitespace = fix
 
 [merge]
 	tool = diffmerge
@@ -49,11 +45,23 @@
 	trustExitCode = true
 	
 [color]
-	# colors from screencast
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
+	# Use colors in Git commands that are capable of colored output when outputting to the terminal
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = white reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+	branch = magenta
 	
 [help]
 	# auto run command if only one suggestion

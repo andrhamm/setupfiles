@@ -3,6 +3,11 @@ autoload -U compinit && compinit
 . ~/.bash_profile
 # . ~/setupfiles/zsh/rc
 
+# Make Sublime Text 2 the default editor
+# the -w bit ensures we wait until returning to the prompt
+# to proceed with any commands (good for commits, etc.)
+export EDITOR="subl -w"
+
 # Stuff for git
 parse_git_status () {
 unset __CURRENT_GIT_BRANCH
@@ -53,7 +58,7 @@ if [ -n "$__CURRENT_GIT_BRANCH" ]; then
         s+="⚡"
     fi
     s+=")"
- 
+
     printf " %s%s" "%{${fg[yellow]}%}" $s
 fi
 
@@ -69,7 +74,8 @@ YELLOW=$'\033[38;5;228m'
 ORANGE=$'\033[38;5;173m'
 
 function precmd() {
-    export PROMPT="%{$GREEN%}%~%{$BLACK%} ] "
+    export PROMPT="%{$GREEN%}%~%{$BLACK%}
+\$ "
 	export RPROMPT="%{$RED%}$(parse_git_status)%{$BLACK%}"
 }
 
@@ -84,3 +90,14 @@ function precmd() {
 
 # Added for Hub - https://github.com/defunkt/hub
 eval "$(hub alias -s)"
+
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
